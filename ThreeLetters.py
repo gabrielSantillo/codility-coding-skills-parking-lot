@@ -22,17 +22,18 @@ def solution(A, B):
     while A or B: 
         # if to check if the len of the array is higher or equal to 2 and if the last and the second last index are equal
         if len(ans) >= 2 and ans[-1] == ans[-2]: 
-            # assigning to the writeA variable the value of True
-            writeA = True
+            # assigning to the writeA variable the value of True if the last index
+            # is equal to 'b' or False if it is equal to 'a'
+            writeA = ans[-1] == 'b'
         else:
             # assigning the value of true or false to the variable writeA. If A >= B then True, if not then False
             writeA = A >= B
 
-        # if writeA is True, append the letter a to the ans list and subtract 1 from A variable
+        # if writeA is True, append the letter 'a' to the ans list and subtract 1 from A variable
         if writeA:
             A -= 1
             ans.append('a')
-        # if writeA is false, append the letter b to the ans list and subtract 1 from B variable
+        # if writeA is false, append the letter 'b' to the ans list and subtract 1 from B variable
         else:
             B -= 1
             ans.append('b')
@@ -40,4 +41,4 @@ def solution(A, B):
     # turning the list into a string
     return "".join(ans)
 
-solution(1, 4)
+solution(5, 3)
